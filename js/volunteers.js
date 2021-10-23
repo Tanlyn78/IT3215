@@ -4,11 +4,19 @@ var volunteerArray = [];
 
 var displayVolunteers = function () {   
     // display the volunteers in the text area
-    $("volunteerList").value = volunteerArray.join("\n");
+    //$("volunteerList").value = volunteerArray.join("\n");
 
 	// comment out the line above change this to a loop instead to loop through the array.
-	
-	
+	//create variable with empty string
+    var volunteerString = "";
+    //for statement initial variable i to 0 and the length to the length of array and increments
+    //counter for variable
+    for (var i=0;i<volunteerArray.length;i++){
+        //update volunteerString with each new name and increment i with the indexed count
+        volunteerString = volunteerString + "\n" + (i+1) + ". " + volunteerArray[i];
+    }
+    //display results in volunteer list section with the volunteerString collected data
+    $("volunteerList").value = volunteerString;
 };
 
 var addVolunteer = function () {
@@ -30,12 +38,17 @@ var addVolunteer = function () {
 
 var deleteVolunteer = function () {
     // get the data from the form (hint: use the same format as from the add).
+    var volunteerString = $("first_name").value + " " + $("last_name").value;
 
     // remove the string from the array (hint, loop through the entire list, compare the string with the item in the array.
-	
-   
-	 
-    // display the volunteers and clear the add form
+    //loop to go through list of volunteers in array
+	for (var i=0; i<volunteerArray.length; i++){
+		//if statement to verify the entered name against an existing list and remove it using splice
+        if (volunteerArray.indexOf(volunteerString) !== -1){
+            volunteerArray.splice(volunteerArray.indexOf(volunteerString),1)
+        }
+    }
+ // display the volunteers and clear the add form
     displayVolunteers();
     
     // get the delete form ready for next entry
