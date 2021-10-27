@@ -14,7 +14,7 @@ function rotate() {
     if (cycleImg == bannerImgs.length) {
         cycleImg = 0;
     }
-    document.getElementById("bannerImages").src = bannerImgs[cycleImg];
+    document.getElementById("img").src = bannerImgs[cycleImg];
 
     setTimeout("rotate()", 3 * 1000);
 }
