@@ -8,9 +8,9 @@ var rotateImages = 0;
 //The function to rotate the images.
 function rotate() {
     
-//Hello - What do you think happened here?
+//rotating images...
     rotateImages++;
-    if (rotateImages === bannerImgs.length) {
+    if (rotateImages == bannerImgs.length) {
         rotateImages = 0;
     }
     document.getElementById("bannerImages").src = bannerImgs[rotateImages];
