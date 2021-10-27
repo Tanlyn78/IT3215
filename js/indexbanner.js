@@ -1,5 +1,5 @@
 //The JavaScript onload event handler 
-window.onload = rotate;
+window.onload = cycle;
 
 //declare  variable 
 var cycleImg = 0;
@@ -7,14 +7,14 @@ var bannerImgs = new Array("images/banner1.jpg","images/banner2.jpg","images/ban
 
 
 //The function to rotate the images.
-function rotate() {
+function cycle() {
     
 //rotating images...
     cycleImg++;
     if (cycleImg == bannerImgs.length) {
         cycleImg = 0;
     }
-    document.getElementById("img").src = bannerImgs[cycleImg];
+    document.getElementById("bannerImages").src = bannerImgs[cycleImg];
 
     setTimeout("rotate()", 3 * 1000);
 }
