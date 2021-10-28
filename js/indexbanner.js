@@ -14,7 +14,7 @@ function cycle() {
     if (cycleImg == bannerImgs.length) {
         cycleImg = 0;
     }
-    document.getElementById("bannerImages").src = bannerImgs[cycleImg];
+    document.getElementById("tannaBanner").src = bannerImgs[cycleImg];
 
     setTimeout("rotate()", 3 * 1000);
 }
