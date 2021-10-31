@@ -18,8 +18,12 @@ function rotate() {
 
     setTimeout("rotate()", 3 * 1000);
 }
-function actionWhenMouseOver(img) {
-    var img = document.getElementsByClassName("gallery").src;
-    img.style['width'] = "400px";
-    img.style['height'] = "300px";
+function bigImg(Bimg) {
+    Bimg.style.height="500px";
+    Bimg.style.width="300px";
+}
+
+function normalImg(Nimg) {
+    Nimg.style.height="300px";
+    Nimg.style.width="200px";
 }
