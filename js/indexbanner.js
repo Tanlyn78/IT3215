@@ -18,3 +18,8 @@ function rotate() {
 
     setTimeout("rotate()", 3 * 1000);
 }
+function actionWhenMouseOver() {
+    var img = document.getElementsByClassName("gallery").src;
+    img.style['width'] = "400px";
+    img.style['height'] = "300px";
+}
