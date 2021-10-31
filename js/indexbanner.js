@@ -19,11 +19,11 @@ function rotate() {
     setTimeout("rotate()", 3 * 1000);
 }
 function bigImg(Bimg) {
-    Bimg.style.height="500px";
-    Bimg.style.width="300px";
+    Bimg.style.height="400px";
+    Bimg.style.width="500px";
 }
 
 function normalImg(Nimg) {
-    Nimg.style.height="300px";
-    Nimg.style.width="200px";
+    Nimg.style.height="200px";
+    Nimg.style.width="300px";
 }
