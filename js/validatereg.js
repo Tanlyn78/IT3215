@@ -12,50 +12,50 @@ function checkall() {
     var dot = email.lastIndexOf(".");
     var SignUpNewsletter = document.getElementById('nwsLetter').value;
   
-    if (usrname === "") {
+    if (usrname == "") {
           document.getElementById('userName').innerHTML = "Username is required.";
           checkev = 0;
         } 
         else {
-          document.getElementById('userName').src = "";
+          document.getElementById('userName').innerHTML = "";
           checkev++;
         }
-    if (pwd === "") {
-          document.getElementById('pwd').src = "Password is required.";
+    if (pwd == "") {
+          document.getElementById('pwd').innerHTML = "Password is required.";
           checkev = 0;
         } 
         else {
-          document.getElementById('pwd').src = "";
+          document.getElementById('pwd').innerHTML = "";
           checkev++;
         }
-    if (pwdVfy === "") {
-          document.getElementById('pwdVfy').src = "matching password is required.";
+    if (pwdVfy == "") {
+          document.getElementById('pwdVfy').innerHTML = "matching password is required.";
           checkev = 0;
         } 
         else {
-          document.getElementById('pwdVfy').src = "";
+          document.getElementById('pwdVfy').innerHTML = "";
           checkev++;
         }
-    if (ftname === "") {
-          document.getElementById('fname').src = "Your first name is required.";
+    if (ftname == "") {
+          document.getElementById('fname').innerHTML = "Your first name is required.";
           checkev = 0;
         } 
         else {
-          document.getElementById('fname').src = "";
+          document.getElementById('fname').innerHTML = "";
           checkev++;
         }
   
-    if (ltname === "") {
-          document.getElementById('lname').src = "Your last name is required.";
+    if (ltname == "") {
+          document.getElementById('lname').innerHTML = "Your last name is required.";
           checkev = 0;
         } 
         else {
-          document.getElementById('lname').src = "";
+          document.getElementById('lname').innerHTML = "";
           checkev++;
         }
   
-    if (email === "") {
-          document.getElementById('email').src = "Your email address is required.";
+    if (email == "") {
+          document.getElementById('email').innerHTML = "Your email address is required.";
           checkev = 0;
         } 
         else if (atrate < 1 || dot < atrate + 2 || dot + 2 >= eltml.length){
@@ -66,7 +66,7 @@ function checkall() {
           checkev++;
         }
   
-    if (phoneNumber === "") {
+    if (phoneNumber == "") {
           document.getElementById('phoneNumber').src = "Please enter a valid telephone number."
           checkev = 0;
         } 
@@ -75,7 +75,7 @@ function checkall() {
           checkev++;
         }
         
-    if (SignUpNewsletter === "") {
+    if (SignUpNewsletter == "") {
           document.getElementById('nwsLetter').src = "Choose option please";
           checkev = 0;
         } 
@@ -84,7 +84,7 @@ function checkall() {
           checkev++;
         }
   
-    if (checkev === 8) {
+    if (checkev == 8) {
          //Check all before opening confirmation page.
             window.location.href = "confirm.html";
         }
