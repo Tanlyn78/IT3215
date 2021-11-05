@@ -13,7 +13,7 @@ function checkall() {
     var SignUpNewsletter = document.getElementById('nwsLetter').value;
   
     if (usrname === "") {
-          document.getElementById('userName').src = "Username is required.";
+          document.getElementById('userName').innerHTML = "Username is required.";
           checkev = 0;
         } 
         else {
