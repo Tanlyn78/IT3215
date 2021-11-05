@@ -30,38 +30,58 @@
     </header>
     <section id="pageForm">
         <form name="valform" action="#" onsubmit="checkall()">
+	<div>
             <label for="usrName">Username:</label>
             <input type="text" id="userName" name="userName" placeholder="Enter your Username" />
-
+	<span class="error" id="userName"></span>
+	</div>
+	
+	<div>
             <label for="Pwd">Password:
             </label>
             <input type="password" id="pwd" name="password" placeholder="Enter your Password" />
-
+		<span class="error" id="pwd"></span>
+	</div>
+	
+	<div>	
             <label for="pwdVfy">Verify your Password:
             </label>
             <input type="password" id="pwdVfy" name="passwordVerify" placeholder="Enter in your Password again" />
-
+		<span class="error" id="pwdVfy"></span>
+	</div>
+	
+	<div>
             <label for="fName">First Name:
             </label>
             <input type="text" id="fname" name="firstName" placeholder="Enter your First Name" />
-
+		<span class="error" id="fName"></span>
+	</div>
+	
+	<div>
             <label for="lName">Last Name:
             </label>
             <input type="text" id="lname" name="lastName" placeholder="Enter your Last Name" />
-            
+		<span class="error" id="lName"></span>
+	</div>
+        <div>
             <label for="email">Email:
             </label>
             <input type="text" id="email" name="email" placeholder="Enter your Email Address" />
-			
+		<span class="error" id="email"></span>
+	</div>
+	<div>	
             <label for="phoneNumber">Phone Number
             </label>
             <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" />
-			
+		<span class="error" id="phoneNumber"></span>
+	</div>
+	<div>
             <label for="signUpNewsletter" id="nwsLetter">Sign up for newsletter:
             </label>
 			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
 				<input type="radio" name="signUpNewsletter" value="No"> No
-            
+		<span class="error" id="nwsLetter"></span>
+	</div>
             <input type="submit" value="Submit" onclick="checkall()">
         </form>
     </section>
