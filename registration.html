@@ -2,8 +2,9 @@
 <html lang="en-US">
 
 <head>
-    <title>Invitation Page</title>
+    <title>Registration Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/validatereg.js"></script> 
 </head>
 
 <body>
@@ -28,41 +29,43 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
-            <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username" />
+        <form name="valform" action="#" onsubmit="checkall()">
+            <label for="usrName">Username:</label>
+            <input type="text" id="userName" name="userName" placeholder="Enter your Username" />
 
-            <label for="Password">Password:
+            <label for="Pwd">Password:
             </label>
-            <input type="password" name="password" placeholder="Enter your Password" />
+            <input type="password" id="pwd" name="password" placeholder="Enter your Password" />
 
-            <label for="passwordVerify">Verify your Password:
+            <label for="pwdVfy">Verify your Password:
             </label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+            <input type="password" id="pwdVfy" name="passwordVerify" placeholder="Enter in your Password again" />
 
-            <label for="firstName">First Name:
+            <label for="fName">First Name:
             </label>
-            <input type="text" name="firstName" placeholder="Enter your First Name" />
+            <input type="text" id="fname" name="firstName" placeholder="Enter your First Name" />
 
-            <label for="hostName">Last Name:
+            <label for="lName">Last Name:
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Last Name" />
+            <input type="text" id="lname" name="lastName" placeholder="Enter your Last Name" />
+            
             <label for="email">Email:
             </label>
-            <input type="text" name="email" placeholder="Enter your Email Address" />
-			<label for="phoneNumber">Phone Number
+            <input type="text" id="email" name="email" placeholder="Enter your Email Address" />
+			
+            <label for="phoneNumber">Phone Number
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Phone Number" />
-			<label for="signUpNewsletter">Sign up for newsletter:
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" />
+			
+            <label for="signUpNewsletter" id="nwsLetter">Sign up for newsletter:
             </label>
 			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
 				<input type="radio" name="signUpNewsletter" value="No"> No
-            <input type="submit" value="Next step">
+            
+            <input type="submit" value="Submit" onclick="checkall()">
         </form>
     </section>
 
-    <footer>This events site is for IT3515 tasks.
-    </footer>
 </body>
 
 </html>
