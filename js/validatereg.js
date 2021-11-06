@@ -105,7 +105,7 @@ const valUserName = (userName) => {
 const valPwd = (pwd) => {
     if (isEmpty(pwd)){
         isError('pwdErr',"Password is a required field.");
-    } else if (!password.match(pwdBasic)){
+    } else if (!pwd.match(pwdBasic)){
         isError ('pwdErr',"Password must contain at least 8 letters and numbers only.");
     } else {
         isValid('pwdErr');
