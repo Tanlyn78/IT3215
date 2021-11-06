@@ -1,6 +1,6 @@
 //declare function variables, one for id element and the other for name
 let $ = function (id) { return document.getElementById(id); };
-let _ = function (name) { return document.getElementsById(name); };
+let nm = function (name) { return document.getElementsById(name); };
 
 //declare regex for string values of different form fields
 //alphaNumeric is for all upper and lower case letters and numbers 1-9
@@ -61,14 +61,14 @@ const isError = (id,message) => {
     //match the id and pull the correctly related message
     $(id).innerText = `$(message)`;
     //push the name obtained that first matches the name obtained from the replace previously
-    allErrs.push(_(name)[0])
+    allErrs.push(nm(name)[0])
 }
 //path for if the entered data is valid and not an error
 const isValid = (id) => {
     //updating name variable to remove the "Err" from the end of the id
     let name = id.replace("Err", "");
     //variable for use in index call of logged errors
-    let valName = _(name)[0];
+    let valName = nm(name)[0];
     //for valid matches, remove any text
     $(id).innerText = "";
     
