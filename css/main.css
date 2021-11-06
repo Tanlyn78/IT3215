@@ -146,3 +146,6 @@ div.desc {
     width:120px; 
     float:left;
 }
+.errMsg {
+    color:#FF0000;
+}
