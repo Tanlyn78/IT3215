@@ -1,6 +1,6 @@
 //declare function variables, one for id element and the other for name
 let $ = function (id) { return document.getElementById(id); };
-let _ = function (name) { return document.getElementsById(name); };
+let _ = function (name) { return document.getElementsByName(name); };
 
 //declare regex for string values of different form fields
 //alphaNumeric is for all upper and lower case letters and numbers 1-9
