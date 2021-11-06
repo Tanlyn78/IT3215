@@ -1,6 +1,6 @@
 //declare function variables, one for id element and the other for name
 let $ = function (id) { return document.getElementById(id); };
-let nm = function (name) { return document.getElementsById(name); };
+let _ = function (name) { return document.getElementsById(name); };
 
 //declare regex for string values of different form fields
 //alphaNumeric is for all upper and lower case letters and numbers 1-9
@@ -61,14 +61,14 @@ const isError = (id,message) => {
     //match the id and pull the correctly related message
     $(id).innerText = `$(message)`;
     //push the name obtained that first matches the name obtained from the replace previously
-    allErrs.push(nm(name)[0])
+    allErrs.push(_(name)[0])
 }
 //path for if the entered data is valid and not an error
 const isValid = (id) => {
     //updating name variable to remove the "Err" from the end of the id
     let name = id.replace("Err", "");
     //variable for use in index call of logged errors
-    let valName = nm(name)[0];
+    let valName = _(name)[0];
     //for valid matches, remove any text
     $(id).innerText = "";
     
@@ -124,8 +124,8 @@ const valPwdVfy = (pwdVerify,pwd) => {
 }
 //I'm re-using the alphanumeric even though it accepts numbers only for simplicity of the project
 //and the message doesn't mention allowing numbers even though the regex technically allows it
-const valFName = (fname) => {
-    if(isEmpty(fname)){
+const valFName = (fName) => {
+    if(isEmpty(fName)){
         isError('fNameErr',"First name is required.");
     } else if (!fname.match(alphaNumeric)){
         isError ('fNameErr',"First name can only contain letters.");
@@ -134,10 +134,10 @@ const valFName = (fname) => {
     }
 }
     //resuing the same logic for last name
-const valLName = (lname) => {
-    if(isEmpty(fname)){
+const valLName = (lName) => {
+    if(isEmpty(lName)){
         isError('lNameErr',"Last name is required.");
-    } else if (!lname.match(alphaNumeric)){
+    } else if (!lName.match(alphaNumeric)){
         isError ('lNameErr',"Last name can only contain letters.");
     } else {
         isValid('lNameErr');
