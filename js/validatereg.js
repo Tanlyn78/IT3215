@@ -59,7 +59,7 @@ const isError = (id,message) => {
     //updating name variable to remove the "Err" from the end of the id
     let name = id.replace("Err", "");
     //match the id and pull the correctly related message
-    $(id).innerText = `$(message)`;
+    $(id).innerText = `${message}`;
     //push the name obtained that first matches the name obtained from the replace previously
     allErrs.push(_(name)[0])
 }
