@@ -41,6 +41,7 @@ function valFields(form) {
             window.location.href = 'confirm.html';
             return false;
         } else {
+ //if error exist goes to the first part of the array and focuses the cursor there
             allErrs[0].focus();
             return false;
         }
