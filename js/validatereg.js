@@ -128,7 +128,7 @@ const valPwdVfy = (pwdVerify,pwd) => {
 const valFName = (fName) => {
     if(isEmpty(fName)){
         isError('fNameErr',"First name is required.");
-    } else if (!fname.match(alphaNumeric)){
+    } else if (!fName.match(alphaNumeric)){
         isError ('fNameErr',"First name can only contain letters.");
     } else {
         isValid('fNameErr');
