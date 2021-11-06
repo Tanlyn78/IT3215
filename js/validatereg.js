@@ -15,7 +15,7 @@ let pwdBasic = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 //phone number 3 digits followed by - and then 3 digits then - and 4 digits
 let phoneten = /^\d{3}(-\d{3})(-\d{4})/;
 //create placeholder array for capture errors
-let allErrs = []
+let allErrs = [];
 
 //adding event listener for changes to form
 function valFields(form) {
@@ -59,7 +59,7 @@ const isError = (id,message) => {
     //updating name variable to remove the "Err" from the end of the id
     let name = id.replace("Err", "");
     //match the id and pull the correctly related message
-    $(id).innerText = $(message);
+    $(id).innerText = `$(message)`;
     //push the name obtained that first matches the name obtained from the replace previously
     allErrs.push(_(name)[0])
 }
