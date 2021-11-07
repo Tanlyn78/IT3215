@@ -37,7 +37,7 @@
             <label for="Pwd">Password:</label><input onchange="valPwd(this.value)" type="password" name="pwd" placeholder="Enter your Password" />
             <div id="pwdErr" class="errMsg"></div>
 
-            <label for="pwdVfy">Verify Password:</label><input onchange="valPwdVfy(this.value)" type="password" name="pwdVerify" placeholder="Enter your Password again" />
+            <label for="pwdVfy">Verify Password:</label><input onchange="valPwdVfy(this.value, form.pwd.value)" type="password" name="pwdVerify" placeholder="Enter your Password again" />
             <div id="pwdVerifyErr" class="errMsg"></div>
 
             <label for="fName">First Name:</label><input onchange="valFName(this.value)" type="text" name="fName" placeholder="Enter your First Name" />
