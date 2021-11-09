@@ -38,7 +38,7 @@ function valFields(form) {
 //if there is no errors captures in the array then return a confirmation page
         if (allErrs.length === 0) {
             getFormData('valForm');
-            window.location.href = 'confirm.html';
+            window.location.href = '/confirm.html';
             return false;
         } else {
  //if error exist goes to the first part of the array and focuses the cursor there
