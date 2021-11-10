@@ -165,3 +165,36 @@ const valPhone = (phoneNbr) => {
     }
 }
 
+const getPassedInParameters () {
+    'use strict';
+    let userName = getURLParameter('userName');
+    let password = getURLParameter('pwd');
+    let passwordVerify = getURLParameter('pwdVerify');
+    let firstName = getURLParameter('fName');
+    let lastName = getURLParameter('lName');
+    let email = getUrlParameter('email');
+    let phoneNumber = getUrlParameter('phoneNbr');
+    let signUpNewsLatter = getURLParameter('signUpNewsLetter');
+    
+    //create Cookies
+    document.cookie = "username" + userName + ";";
+    document.cookie = "password" + Pwd + ";";
+    document.cookie = "passwordVerify" + pwdVerify + ";";
+    document.cookie = "firstName" + fName + ";";
+    document.cookie = "lastName" + lName + ";";
+    document.cookie = "email" + email + ";";
+    document.cookie = "phoneNumber" + phoneNbr + ";";
+    document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
+}
+
+const getURLParameter(name){
+    name = name.replace(/[\[]/,'\\[').replace(/[\]]/,'\\]');
+    let regex = RegExp('[\\?&]') + name + '=([^&#]*)');
+    let results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g,' '));
+};
+
+function getPassedInParametersFromCookie() {
+    let x = document.cookie;
+    document.getElementById('node-id').innerHTML = x
+}
