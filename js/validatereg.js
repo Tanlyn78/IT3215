@@ -185,6 +185,9 @@ const getPassedInParameters () {
     document.cookie = "email" + email + ";";
     document.cookie = "phoneNumber" + phoneNbr + ";";
     document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
+        
+        getPassedInParametersFromCookie();
+        
 }
 
 const getURLParameter(name){
