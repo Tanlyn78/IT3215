@@ -30,7 +30,7 @@
     </header>
     <!-- added some content to the html form to be utilized in different function in js-->
     <section id=pageForm>
-        <form name="valForm" id="valForm" onsubmit="return valFields(valForm)">
+        <form name="valForm" id="valForm" onsubmit="return valFields(valForm)" method="GET">
             <label for="userName">Username:</label><input onchange="valUserName(this.value)" type="text" name="userName" placeholder="Enter your Username" />
             <div id="userNameErr" class="errMsg"></div>
             
