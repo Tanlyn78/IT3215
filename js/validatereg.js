@@ -165,19 +165,20 @@ function valFields(form) {
         }
 }
 //function to get passed in parameters of the form fields, the '' information matches the html form field names
-function getPassedInParameters () {
+function GetPassedInParameters () {
+    "use strict";
     let userName = getURLParameter('userName');
-    let password = getURLParameter('pwd');
-    let passwordVerify = getURLParameter('pwdVerify');
-    let firstName = getURLParameter('fName');
-    let lastName = getURLParameter('lName');
+    let pwd = getURLParameter('pwd');
+    let pwdVerify = getURLParameter('pwdVerify');
+    let fName = getURLParameter('fName');
+    let lName = getURLParameter('lName');
     let email = getUrlParameter('email');
-    let phoneNumber = getUrlParameter('phoneNbr');
-    let signUpNewsLatter = getURLParameter('signUpNewsLetter');
+    let phoneNbr = getUrlParameter('phoneNbr');
+    let signUpNewsLetter = getURLParameter('signUpNewsLetter');
     
     //create Cookies with names and data from that "named" portion of the form
     document.cookie = "username" + userName + ";";
-    document.cookie = "password" + Pwd + ";";
+    document.cookie = "password" + pwd + ";";
     document.cookie = "passwordVerify" + pwdVerify + ";";
     document.cookie = "firstName" + fName + ";";
     document.cookie = "lastName" + lName + ";";
