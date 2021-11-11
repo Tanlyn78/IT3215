@@ -172,8 +172,8 @@ function getFormData () {
     let pwdVerify = getURLParameter('pwdVerify');
     let fName = getURLParameter('fName');
     let lName = getURLParameter('lName');
-    let email = getUrlParameter('email');
-    let phoneNbr = getUrlParameter('phoneNbr');
+    let email = getURLParameter('email');
+    let phoneNbr = getURLParameter('phoneNbr');
     let signUpNewsLetter = getURLParameter('signUpNewsLetter');
     
     //create Cookies with names and data from that "named" portion of the form
