@@ -192,7 +192,7 @@ function getPassedInParameters () {
 
 const getURLParameter = (name) => {
     name = name.replace(/[\[]/,'\\[').replace(/[\]]/,'\\]');
-    let regex = RegExp('[\\?&]') + name + '=([^&#]*)');
+    let regex = RegExp('[\\?&]' + name + '=([^&#]*)');
     let results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g,' '));
 };
