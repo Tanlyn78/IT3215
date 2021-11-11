@@ -164,42 +164,4 @@ function valFields(form) {
             return false;
         }
 }
-//function to get passed in parameters of the form fields, the '' information matches the html form field names
-function getFormData () {
-    "use strict";
-    let userName = getURLParameter('userName');
-    let pwd = getURLParameter('pwd');
-    let pwdVerify = getURLParameter('pwdVerify');
-    let fName = getURLParameter('fName');
-    let lName = getURLParameter('lName');
-    let email = getURLParameter('email');
-    let phoneNbr = getURLParameter('phoneNbr');
-    let signUpNewsLetter = getURLParameter('signUpNewsLetter');
-    
-    //create Cookies with names and data from that "named" portion of the form
-    document.cookie = "username" + userName + ";";
-    document.cookie = "password" + pwd + ";";
-    document.cookie = "passwordVerify" + pwdVerify + ";";
-    document.cookie = "firstName" + fName + ";";
-    document.cookie = "lastName" + lName + ";";
-    document.cookie = "email" + email + ";";
-    document.cookie = "phoneNumber" + phoneNbr + ";";
-    document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
-        
-        getPassedInParametersFromCookie();
-        
-}
 
-//using regex to update 
-function getURLParameter (name){
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    let regex = RegExp('[\\?&]' + name + '=([^&#]*)');
-    let results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g,' '));
-};
-
-//the data should be passed to the confirm.html file into the div 'node-id'
-function getPassedInParametersFromCookie() {
-    let x = document.cookie;
-    document.getElementById('node-id').innerHTML = x
-}
