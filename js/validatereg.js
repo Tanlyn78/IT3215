@@ -190,7 +190,7 @@ function getPassedInParameters () {
         
 }
 
-const getURLParameter(name){
+const getURLParameter = (name) => {
     name = name.replace(/[\[]/,'\\[').replace(/[\]]/,'\\]');
     let regex = RegExp('[\\?&]') + name + '=([^&#]*)');
     let results = regex.exec(location.search);
