@@ -17,35 +17,6 @@ let phoneten = /^\d{3}(-\d{3})(-\d{4})/;
 //create placeholder array for capture errors
 let allErrs = [];
 
-//adding event listener for changes to form
-function valFields(form) {
-        $('valForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-        });
-    
-//array reset to empty prior to final check as the other functions are checked on change
-        allErrs = [];
-
-    //pulling the values of the names from html form to process in the validation
-        valUserName(form.userName.value);
-        valPwd(form.pwd.value);
-        valPwdVfy(form.pwdVerify.value, form.pwd.value);
-        valFName(form.fName.value);
-        valLName(form.lName.value);
-        valEmail(form.email.value);
-        valPhone(form.phoneNbr.value);
-
-//if there is no errors captures in the array then return a confirmation page
-        if (allErrs.length === 0) {
-            getFormData('valForm');
-            window.location.href = 'confirm.html';
-            return false;
-        } else {
- //if error exist goes to the first part of the array and focuses the cursor there
-            allErrs[0].focus();
-            return false;
-        }
-}
 
 //declare isEmpty arrow function with arrow expression to check for empty fields after trimming white space
 const isEmpty = (userString) => {
@@ -165,6 +136,35 @@ const valPhone = (phoneNbr) => {
     }
 }
 
+//adding event listener for changes to form
+function valFields(form) {
+        $('valForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
+    
+//array reset to empty prior to final check as the other functions are checked on change
+        allErrs = [];
+
+    //pulling the values of the names from html form to process in the validation
+        valUserName(form.userName.value);
+        valPwd(form.pwd.value);
+        valPwdVfy(form.pwdVerify.value, form.pwd.value);
+        valFName(form.fName.value);
+        valLName(form.lName.value);
+        valEmail(form.email.value);
+        valPhone(form.phoneNbr.value);
+
+//if there is no errors captures in the array then return a confirmation page
+        if (allErrs.length === 0) {
+            getFormData('valForm');
+            window.location.href = 'confirm.html';
+            return false;
+        } else {
+ //if error exist goes to the first part of the array and focuses the cursor there
+            allErrs[0].focus();
+            return false;
+        }
+}
 function getPassedInParameters () {
     'use strict';
     let userName = getURLParameter('userName');
