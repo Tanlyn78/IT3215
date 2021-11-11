@@ -17,7 +17,6 @@ let phoneten = /^\d{3}(-\d{3})(-\d{4})/;
 //create placeholder array for capture errors
 let allErrs = [];
 
-
 //declare isEmpty arrow function with arrow expression to check for empty fields after trimming white space
 const isEmpty = (userString) => {
     //trimming whitespace and then capturing length
@@ -165,8 +164,8 @@ function valFields(form) {
             return false;
         }
 }
+//function to get passed in parameters of the form fields, the '' information matches the html form field names
 function getPassedInParameters () {
-    'use strict';
     let userName = getURLParameter('userName');
     let password = getURLParameter('pwd');
     let passwordVerify = getURLParameter('pwdVerify');
@@ -176,7 +175,7 @@ function getPassedInParameters () {
     let phoneNumber = getUrlParameter('phoneNbr');
     let signUpNewsLatter = getURLParameter('signUpNewsLetter');
     
-    //create Cookies
+    //create Cookies with names and data from that "named" portion of the form
     document.cookie = "username" + userName + ";";
     document.cookie = "password" + Pwd + ";";
     document.cookie = "passwordVerify" + pwdVerify + ";";
@@ -190,13 +189,15 @@ function getPassedInParameters () {
         
 }
 
-const getURLParameter = (name) => {
-    name = name.replace(/[\[]/,'\\[').replace(/[\]]/,'\\]');
+//using regex to update 
+function getURLParameter = (name) => {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     let regex = RegExp('[\\?&]' + name + '=([^&#]*)');
     let results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g,' '));
 };
 
+//the data should be passed to the confirm.html file into the div 'node-id'
 function getPassedInParametersFromCookie() {
     let x = document.cookie;
     document.getElementById('node-id').innerHTML = x
