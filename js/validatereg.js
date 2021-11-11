@@ -200,6 +200,5 @@ function getURLParameter (name){
 
 //the data should be passed to the confirm.html file into the div 'node-id'
 function getFormData () {
-    let x = document.cookie;
-    document.getElementById('node-id').innerHTML = x
+    let x = document.getElementById('node-id').innerHTML;
 }
