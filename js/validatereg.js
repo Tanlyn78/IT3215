@@ -191,7 +191,7 @@ function GetPassedInParameters () {
 }
 
 //using regex to update 
-function getURLParameter = (name) => {
+function getURLParameter (name){
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     let regex = RegExp('[\\?&]' + name + '=([^&#]*)');
     let results = regex.exec(location.search);
