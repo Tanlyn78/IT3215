@@ -177,7 +177,7 @@ function getFormData () {
     let signUpNewsLetter = getURLParameter('signUpNewsLetter');
     
     //create Cookies with names and data from that "named" portion of the form
-    document.cookie = "username" + userName + ";";
+    document.cookie = "userName" + userName + ";";
     document.cookie = "password" + pwd + ";";
     document.cookie = "passwordVerify" + pwdVerify + ";";
     document.cookie = "firstName" + fName + ";";
