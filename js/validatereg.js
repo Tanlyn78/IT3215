@@ -155,7 +155,7 @@ function valFields(form) {
 
 //if there is no errors captures in the array then return a confirmation page
         if (allErrs.length === 0) {
-            GetPassedInParemeters('valForm');
+            getFormData ('valForm');
             window.location.href = 'confirm.html';
             return false;
         } else {
@@ -186,7 +186,7 @@ function GetPassedInParameters () {
     document.cookie = "phoneNumber" + phoneNbr + ";";
     document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
         
-        getPassedInParametersFromCookie();
+        getFormData ();
         
 }
 
@@ -199,7 +199,7 @@ function getURLParameter (name){
 };
 
 //the data should be passed to the confirm.html file into the div 'node-id'
-function getPassedInParametersFromCookie() {
+function getFormData () {
     let x = document.cookie;
     document.getElementById('node-id').innerHTML = x
 }
