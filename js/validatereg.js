@@ -165,7 +165,7 @@ const valPhone = (phoneNbr) => {
     }
 }
 
-const getPassedInParameters () {
+function getPassedInParameters () {
     'use strict';
     let userName = getURLParameter('userName');
     let password = getURLParameter('pwd');
