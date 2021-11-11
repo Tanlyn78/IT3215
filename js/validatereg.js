@@ -155,7 +155,7 @@ function valFields(form) {
 
 //if there is no errors captures in the array then return a confirmation page
         if (allErrs.length === 0) {
-            getFormData('valForm');
+            GetPassedInParemeters('valForm');
             window.location.href = 'confirm.html';
             return false;
         } else {
