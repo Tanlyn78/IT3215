@@ -186,7 +186,7 @@ function GetPassedInParameters () {
     document.cookie = "phoneNumber" + phoneNbr + ";";
     document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
         
-        getFormData ();
+        getPassedInParametersFromCookie();
         
 }
 
@@ -199,6 +199,6 @@ function getURLParameter (name){
 };
 
 //the data should be passed to the confirm.html file into the div 'node-id'
-function getFormData () {
+function getPassedInParametersFromCookie() {
     let x = document.getElementById('node-id').innerHTML;
 }
