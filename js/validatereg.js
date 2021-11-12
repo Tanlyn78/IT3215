@@ -164,42 +164,56 @@ function valFields(form) {
             return false;
         }
 }
-//function to get passed in parameters of the form fields, the '' information matches the html form field names
-function getFormData () {
-    "use strict";
-    let userName = getURLParameter('userName.value');
-    let pwd = getURLParameter('pwd');
-    let pwdVerify = getURLParameter('pwdVerify');
-    let fName = getURLParameter('fName');
-    let lName = getURLParameter('lName');
-    let email = getURLParameter('email');
-    let phoneNbr = getURLParameter('phoneNbr');
-    let signUpNewsLetter = getURLParameter('signUpNewsLetter');
+//function to create new form to hold data gathered from cookies using formData methods
+function getFormData (formName) {
+    let fmElements = document.forms[formName];
+    const formData = new formData(fmElements);
     
-    //create Cookies with names and data from that "named" portion of the form
-    document.cookie = "userName" + userName + ";";
-    document.cookie = "password" + pwd + ";";
-    document.cookie = "passwordVerify" + pwdVerify + ";";
-    document.cookie = "firstName" + fName + ";";
-    document.cookie = "lastName" + lName + ";";
-    document.cookie = "email" + email + ";";
-    document.cookie = "phoneNumber" + phoneNbr + ";";
-    document.cookie = "signUpNewsLetter" + signUpNewsLetter + ";";
-        
-        getPassedInParametersFromCookie();
-        
+    console.log('starting');
+    //creating key/value pairs for displaying formData later
+    for(let key of formData.keys()) {
+        document.cookie = `${key}=${formData.get(key)}`;
+    }
 }
 
-//using regex to update 
-function getURLParameter (name){
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    let regex = RegExp('[\\?&]' + name + '=([^&#]*)');
-    let results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g,' '));
-};
+//function to get the cookies decoded and split into key/value paris to create output later
+//cname is cookie name
+//decoded cookie will be the decoded URI content converting it to a string
+//then splitting it by the semi=colon and running the loop to fill in the ca (cookie array)
+//then looking for a cookie with a corresponding value and if present adding it to the array
 
-//the data should be passed to the confirm.html file into the div 'node-id'
-function getPassedInParametersFromCookie() {
-    let x = document.cookie;
-    document.getElementById('node-id').innerHTML = x
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    //if no cookie found return empty string
+    return "";
 }
+
+//running a function to take the passed in cookie data and displaying it on the confirm page
+//each line contructs the element id and then displays user friend text of User Name, Password, etc
+//and then matches it up with the capture and decoded cookie data from the previous functions
+function displayFormData(id) {
+    document.getElementById(id).innerText += `User Name = ${getCookie('userName')} \n`;
+    document.getElementById(id).innerText += `Password = ${getCookie('password')} \n`;
+    document.getElementById(id).innerText += `First name = ${getCookie('firstName')} \n`;
+    document.getElementById(id).innerText += `Last Name = ${getCookie('lastName')} \n`;
+    document.getElementById(id).innerText += `Email = ${getCookie('email')} \n`;
+    document.getElementById(id).innerText += `Phone Number = ${getCookie('phoneNumber')} \n`;
+    document.getElementById(id).innerText += `Newsletter = ${getCookie('signUpNewsletter')} \n`;
+
+}
+
+    
+
+    
+
