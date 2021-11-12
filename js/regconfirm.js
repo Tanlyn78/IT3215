@@ -38,11 +38,11 @@ function getCookie(cname) {
 //and then matches it up with the capture and decoded cookie data from the previous functions
 function displayFormData(id) {
     document.getElementById(id).innerText += `User Name = ${getCookie('userName')} \n`;
-    document.getElementById(id).innerText += `Password = ${getCookie('password')} \n`;
-    document.getElementById(id).innerText += `First name = ${getCookie('firstName')} \n`;
-    document.getElementById(id).innerText += `Last Name = ${getCookie('lastName')} \n`;
+    document.getElementById(id).innerText += `Password = ${getCookie('pwd')} \n`;
+    document.getElementById(id).innerText += `First name = ${getCookie('fName')} \n`;
+    document.getElementById(id).innerText += `Last Name = ${getCookie('lName')} \n`;
     document.getElementById(id).innerText += `Email = ${getCookie('email')} \n`;
-    document.getElementById(id).innerText += `Phone Number = ${getCookie('phoneNumber')} \n`;
+    document.getElementById(id).innerText += `Phone Number = ${getCookie('phoneNbr')} \n`;
     document.getElementById(id).innerText += `Newsletter = ${getCookie('signUpNewsletter')} \n`;
 
 }
