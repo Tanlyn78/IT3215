@@ -30,7 +30,7 @@
     </header>
     <!-- added some content to the html form to be utilized in different function in js-->
     <section id=pageForm>
-        <form action="/registration.html" name="valForm" id="valForm" onsubmit="return valFields(valForm)" method="get">
+        <form action="/registration.html" name="valForm" id="valForm" onsubmit="return valFields(valForm)">
             <label for="userName">Username:</label><input onchange="valUserName(this.value)" type="text" name="userName" placeholder="Enter your Username" />
             <div id="userNameErr" class="errMsg"></div>
             
@@ -57,7 +57,7 @@
             <input type="radio" name="signUpNewsletter" value="No"> No
 
 
-            <input type="submit" formaction="confirm.html" value="Submit">
+            <input type="submit" value="Submit">
         </form>
         
     </section>
