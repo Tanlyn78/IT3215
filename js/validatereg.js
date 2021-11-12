@@ -167,7 +167,7 @@ function valFields(form) {
 //function to get passed in parameters of the form fields, the '' information matches the html form field names
 function getFormData () {
     "use strict";
-    let userName = getURLParameter('userName');
+    let userName = getURLParameter('userName.value');
     let pwd = getURLParameter('pwd');
     let pwdVerify = getURLParameter('pwdVerify');
     let fName = getURLParameter('fName');
