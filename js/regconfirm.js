@@ -1,7 +1,7 @@
 //function to create new form to hold data gathered from cookies using formData methods
 function getFormData (formName) {
     let fmElements = document.forms[formName];
-    const formData = new formData(fmElements);
+    const formData = new FormData(fmElements);
     
     console.log('starting');
     //creating key/value pairs for displaying formData later
